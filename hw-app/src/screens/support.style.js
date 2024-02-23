@@ -1,27 +1,27 @@
 import { StyleSheet } from "react-native";
 
 
-styles = StyleSheet.create({
+supportStyles = StyleSheet.create({
     container:{
         flex:1,
         width:'100%',
         height:'100%',
     },
     top:{
+        
         width:'100%',
-        height:'55%',
+        height:'50%'
     },
     mid:{
         width:'100%',
-        height:'20%',
-    
+        height:'30%'
     },
     bottom:{
         width:'100%',
-        height:'25%',
-        
+        height:'20%'
     }
+   
 }
 )
 
-export default styles;
+export default supportStyles;

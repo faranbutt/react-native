@@ -8,14 +8,20 @@ const topstyles = StyleSheet.create({
     },
     imageBox:{
         flex:1,
-        justifyContent:'flex-end',
+        justifyContent:'center',
         alignItems:'center',
         width:'100%',
     },
     image:{
         width: 200,
         height:300,
+    },
+    support:{
+        width:70,
+        height:70,
+        
     }
+    
 })
 
 export default topstyles;

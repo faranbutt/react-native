@@ -10,6 +10,19 @@ const bottomstyles = StyleSheet.create({
         flexDirection:'row',
         gap:20
 
+    },
+    dividerContainer:{
+        width:'100%',
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center',
+        alignSelf:'center',
+        gap:20,
+    },
+    divider:{
+        backgroundColor:'#87CEEB',
+        width:'35%',
+        height:'10%',
     }
 })
 

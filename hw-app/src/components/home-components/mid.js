@@ -1,12 +1,11 @@
-import { View,Text } from "react-native";
-import { TextInput } from "react-native";
+import { View,Text, TextInput, TouchableOpacity, Pressable } from "react-native";
 import { useState } from "react";
 import midstyles from "./mid.style";
-
+import {Ionicons} from '@expo/vector-icons'
 export default function Mid (){
     const [username,setUsername] = useState('username...')
     const [password,setPassword] = useState('#####')
-    
+    const [showPassword, setShowPassword] = useState(false)
     return (
         <View style={midstyles.container}>
             <View style={midstyles.inputBox}>
@@ -14,6 +13,8 @@ export default function Mid (){
                     style={midstyles.input}
                     onChangeText={text => setUsername(text)}
                     placeholder="Username"
+                    value={username}
+
                 />
             </View>
             <View>
@@ -22,8 +23,18 @@ export default function Mid (){
                         style={midstyles.input}
                         onChangeText={text => setPassword(text)}
                         placeholder="Password"
+                        secureTextEntry={!showPassword}
+                        value={password}
                     />
+                    <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+                        <Ionicons name={showPassword ? 'eye-off' : 'eye'} size={24} color="black" />
+                    </TouchableOpacity>
                 </View>
+            </View>
+            <View>
+                <Pressable style={midstyles.submitbutton}>
+                    <Text style={{color:'#fff'}}>Submit Button</Text>
+                </Pressable>
                 <View style={midstyles.forgot}>
                     <Text style={midstyles.forgotText}>Forgot Password!</Text>
                 </View>

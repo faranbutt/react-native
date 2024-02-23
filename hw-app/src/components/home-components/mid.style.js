@@ -5,22 +5,36 @@ const midstyles = StyleSheet.create({
         flex:1,
         justifyContent:'center',
         alignItems:'center',
-        gap:20
+        gap:20,
     },
     inputBox:{
-        borderColor:'pink',
-        borderWidth:2,
+        borderColor:'white',
+        borderWidth:1,
         paddingHorizontal:6,
         paddingVertical:4,
         width:180,
         borderRadius:25,
-        backgroundColor:'white'
+        backgroundColor:'white',
+        flexDirection:'row',
+        justifyContent:'space-between'
     },
     forgot:{
-        marginLeft:10,
+        alignItems:'flex-end',
     },
     forgotText:{
-        textDecorationLine:'underline'
+        textDecorationLine:'underline',
+        color:'gray'
+    },
+    submitbutton:{
+        backgroundColor:"#87CEEB",
+        width:170,
+        height:34,
+        justifyContent:'center',
+        alignItems:'center',
+        borderColor:'#fff',
+        borderWidth:2,
+        borderRadius:10
+        
     }
 })
 
