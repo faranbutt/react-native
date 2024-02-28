@@ -2,7 +2,9 @@ import { View,Text, TextInput, TouchableOpacity, Pressable } from "react-native"
 import { useState } from "react";
 import midstyles from "./mid.style";
 import {Ionicons} from '@expo/vector-icons'
-export default function Mid (){
+
+
+export default function Mid ({exploison}){
     const [username,setUsername] = useState('username...')
     const [password,setPassword] = useState('#####')
     const [showPassword, setShowPassword] = useState(false)
@@ -32,7 +34,7 @@ export default function Mid (){
                 </View>
             </View>
             <View>
-                <Pressable style={midstyles.submitbutton}>
+                <Pressable style={midstyles.submitbutton} onPress={()=>exploison.current.start()}>
                     <Text style={{color:'#fff'}}>Submit Button</Text>
                 </Pressable>
                 <View style={midstyles.forgot}>

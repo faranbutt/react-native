@@ -6,21 +6,38 @@ import Home from './src/screens/home';
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from "@react-navigation/native-stack"
 import Support from './src/screens/Support';
+import ConfettiCannon from 'react-native-confetti-cannon'
+// import HomeScreen from './src/screens/homeScreen';
+
 const Stack = createNativeStackNavigator()
 
-
 function HomeScreen({navigation}) {
+  const exploison = React.useRef()  
   return (
     <View style={styles.container}>
       <LinearGradient
       colors={['white','#87CEEB','white']}
       style={{ flex: 1 }}
       >
-        <Home navigation={navigation} />
+        <ConfettiCannon 
+        count={200} 
+        origin={{x: -10, y: 0}}
+        ref={exploison}
+        fadeOut={true}
+
+        />
+        <Home navigation={navigation} exploison={exploison} />
       </LinearGradient>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+   
+  },
+});
 
 export default function App(){
   return (
@@ -34,9 +51,4 @@ export default function App(){
 }
 
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-   
-  },
-});
+

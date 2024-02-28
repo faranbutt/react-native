@@ -3,6 +3,7 @@ import bottomstyles from "./bottom.style";
 import {useFonts} from 'expo-font';
 
 export default function Bottom (){
+
     return (
         <View style={bottomstyles.container}>
            <View style={bottomstyles.dividerContainer}>
