@@ -8,7 +8,7 @@ export default function Home({navigation, exploison}){
                 <Top  navigation={navigation} />
             </View>
             <View style={styles.mid}>
-                <Mid exploison={exploison} />
+                <Mid exploison={exploison} navigation={navigation} />
             </View>
             <View style={styles.bottom}>
                 <Bottom />

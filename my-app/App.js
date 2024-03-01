@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, Pressable, StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import Home from './src/screens/home';
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator} from "@react-navigation/native-stack"
-import Support from './src/screens/Support';
 import ConfettiCannon from 'react-native-confetti-cannon'
-// import HomeScreen from './src/screens/homeScreen';
+import { Home, Products, Support } from './src/screens/exporter';
 
 const Stack = createNativeStackNavigator()
 
@@ -45,6 +43,7 @@ export default function App(){
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} options={{header: () => null}} />
         <Stack.Screen name="Support" component={Support} options={{header: () => null}} />
+        <Stack.Screen name="Products" component={Products} options={{header: () => null}} />
       </Stack.Navigator>
     </NavigationContainer>
   )

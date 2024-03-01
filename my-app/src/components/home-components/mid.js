@@ -4,11 +4,18 @@ import midstyles from "./mid.style";
 import {Ionicons} from '@expo/vector-icons'
 
 
-export default function Mid ({exploison}){
+export default function Mid ({exploison, navigation}){
     const [username,setUsername] = useState('username...')
     const [password,setPassword] = useState('#####')
     const [showPassword, setShowPassword] = useState(false)
+    
+    const navigateToProductsPage = () => {
+        exploison.current.start();
+        navigation.navigate('Products')
+    }
+    
     return (
+
         <View style={midstyles.container}>
             <View style={midstyles.inputBox}>
                 <TextInput
@@ -34,7 +41,7 @@ export default function Mid ({exploison}){
                 </View>
             </View>
             <View>
-                <Pressable style={midstyles.submitbutton} onPress={()=>exploison.current.start()}>
+                <Pressable style={midstyles.submitbutton} onPress={navigateToProductsPage}>
                     <Text style={{color:'#fff'}}>Submit Button</Text>
                 </Pressable>
                 <View style={midstyles.forgot}>

@@ -1,7 +1,12 @@
 # react-native
 A repo to practice react-native 
 
-## First App:
-<img src="images/app1.jpg" alt="First App" width="200" height="400">
+## First APP  I am designing:
+
+<p align="center">
+  <img src="images/app.jpg" width="200" height="400" style="margin-right: 20px;" />
+  <img src="images/profile.jpg" width="200" height="400" style="margin-right: 20px;" />
+  <img src="images/support.jpg" width="200" height="400" />
+</p>
 
 
