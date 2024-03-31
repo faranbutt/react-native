@@ -1,3 +1,3 @@
 import Home from "./home/home";
-
-export {Home};
+import Profile from "./profile/profile";
+export {Home,Profile};

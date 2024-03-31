@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "cycling-app",
-    "slug": "cycling-app",
+    "name": "namaz-app",
+    "slug": "namaz-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -21,16 +21,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.faranbutt.cyclingapp"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "d9eaa0cc-7dd8-4a15-861b-adeaa65cb516"
-      }
     }
   }
 }
