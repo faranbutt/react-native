@@ -8,5 +8,9 @@ const fields = [
     {id:7,value:"Gender"}
 ]
 
+const loginfields = [
+    {id:1,value:"Email"},
+    {id:2,value:"Password"},
+]
 
-export {fields};
+export {fields,loginfields};

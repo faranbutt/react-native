@@ -1,4 +1,4 @@
-import { View,Text, TextInput, Pressable, Touchable, TouchableOpacity, } from "react-native"
+import { View,Text, TextInput, Pressable, Touchable, TouchableOpacity, Image } from "react-native"
 import {fields} from '../../helpers/constants'
 import { useState } from "react"
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
@@ -6,8 +6,9 @@ import { Fontisto } from '@expo/vector-icons';
 import {formatDate} from '../../helpers/dateparse';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import * as ImagePicker from 'expo-image-picker';
 
-export default function HomeMid({setFirstName  ,setLastName, setEmail, setPassword, setConfirmPassword, setGender, setDateofBirth, Gender}){
+export default function HomeMid({profileimage, setImage, setFirstName  ,setLastName, setEmail, setPassword, setConfirmPassword, setGender, setDateofBirth, Gender}){
 
    
     const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
@@ -44,6 +45,24 @@ export default function HomeMid({setFirstName  ,setLastName, setEmail, setPasswo
         }
     }
 
+    const CaptureImage = async() => {
+        try {
+            const result = await ImagePicker.launchImageLibraryAsync({
+                cameraType:ImagePicker.CameraType.front
+            })
+            if (!result.canceled){
+                setImage(result.assets[0].uri)
+            }
+            
+        } catch (error) {
+            alert(error.message)
+            if (error.message.includes('permission')){
+                ImagePicker.requestCameraPermissionsAsync();
+            }
+
+        }
+    }
+
     return(
         <View className='bg-purple-400 w-full h-full rounded-lg shadow-2xl' style={{shadowColor: "#000",
         shadowOffset: {
@@ -56,8 +75,22 @@ export default function HomeMid({setFirstName  ,setLastName, setEmail, setPasswo
         elevation: 19,}}>
             <View className='flex-1 flex-col p-2'>
                 <View className=' flex h-20 justify-center items-center rounded-t-lg'>
-                    <View className='bg-white w-20 h-20  rounded-full justify-center items-center'>
-                        <MaterialCommunityIcons name="face-recognition" size={24} color="purple" />
+                    <View className='bg-white w-20 h-20 rounded-full justify-center items-center'>
+                        <TouchableOpacity onPress={CaptureImage} >
+                            {
+                                profileimage ?
+                                (
+                                   <Image 
+                                        source={{uri:profileimage}}
+                                        className="w-20 h-20 rounded-full"
+                                   />
+                                )
+                                :
+                                (
+                                    <MaterialCommunityIcons name="face-recognition" size={24} color="purple" />
+                                )
+                            }
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <View className='flex-1 justify-center'>
